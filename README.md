@@ -48,15 +48,22 @@ Il faut spécifier les valuers confidentiel dans un fichier chiffré `@group_var
 
 ```yaml
 ---
+#les mot de passe de l'utilisateur "webadmin" sur chaque serveur
 vault_become_pass_hostname1: valeur
 vault_become_pass_hostname2: valeur
 vault_become_pass_hostname3: valeur
 vault_become_pass_hub_hostname: valeur
 vault_become_pass_database_hostname: valeur
 
+#le mot de passe de l'utilisateur admin de Automation Controller
 vault_admin_password: valeur
-vault_pg_password: valeur
+
+
 vault_automationhub_admin_password: valeur
+
+#le mot de passe de base des données de Automation Controller
+vault_pg_password: valeur
+
 vault_automationhub_pg_password: valeur
 
 vault_automationcatalog_pg_password: valeur
@@ -199,3 +206,5 @@ $ ansible-playbook -i inventory/env_catalog post_install_catalog.yml
 
 - Install Guide -- https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.3/html-single/red_hat_ansible_automation_platform_installation_guide/index
 
+
+![aap-schema](./aap_schema.jpeg)
