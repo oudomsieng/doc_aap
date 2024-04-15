@@ -1,0 +1,19 @@
+---
+ee_builder_dir_clean: true
+ee_builder_dir: /tmp
+ee_verbosity: 1
+ee_pull_policy: always
+
+ee_update_base_images: true
+
+# Automation hub collection repository configuration
+ee_pull_collections_from_hub: true
+ah_host: private_automation_hub_host
+ah_token: "{{ vlt_ah_token }}"
+
+ee_base_registry_username: admin
+ee_base_registry_password: "{{ vlt_ee_base_registry_password }}"
+
+ee_registry_dest: private_automation_hub_host
+ee_registry_username: admin
+ee_registry_password: "{{ vlt_ee_registry_password }}
