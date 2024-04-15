@@ -1,0 +1,12 @@
+---
+- name: Playbook to create custom EE
+  hosts: ee_builder
+  gather_facts: false
+  tasks:
+    - name: Include ee-definition vars based on ee-name
+      ansible.builtin.include_vars:
+        file: "{{ playbook_dir }}/ee-definitions/{{ ee_name }}.yml"
+
+    - name: Include ee_builder role for building and publishing ee
+      ansible.builtin.include_role:
+        name: infra.ee_utilities.ee_builder
