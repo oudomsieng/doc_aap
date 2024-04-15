@@ -1,0 +1,28 @@
+---
+ee_base_image: private-automation-hub-host/ee-minimal-rhel8:latest
+options:
+  package_manager_path: /usr/bin/microdnf
+ee_list:
+  - name: ee-utilities
+    alt_name: Custom EE with infra utilities collections
+    tag: latest
+    dependencies:
+      system: []
+      python: []
+      galaxy:
+        collections:
+          - infra.controller_configuration
+          - ansible.controller
+          - infra.ah_configuration
+          - infra.ee_utilities
+          - containers.podman
+    build_items: []
+    build_files: []
+    build_steps:
+      prepend_base: []
+      append_base: []
+      prepend_galaxy: []
+      prepend_builder: []
+      append_builder: []
+      prepend_final: []
+      append_final: []
